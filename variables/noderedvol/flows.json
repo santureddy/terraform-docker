@@ -1,0 +1,36 @@
+[
+    {
+        "id": "ca963c2d5f501f29",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2f597b26353002c2",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "31de5664da08216e",
+        "type": "comment",
+        "z": "2f597b26353002c2",
+        "name": "",
+        "info": "",
+        "x": 290,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0df4e66b040955c4",
+        "type": "comment",
+        "z": "ca963c2d5f501f29",
+        "name": "",
+        "info": "",
+        "x": 250,
+        "y": 220,
+        "wires": []
+    }
+]
