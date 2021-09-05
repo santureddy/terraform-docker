@@ -9,5 +9,5 @@ terraform {
 
 provider "docker" {
 
-  host = "tcp://localhost:2375"
+ # host = "tcp://localhost:2375"
 }
