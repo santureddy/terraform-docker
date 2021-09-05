@@ -28,7 +28,10 @@ resource "docker_container" "nodered_container" {
   }
   volumes {
     container_path = "/data"
-    host_path = "/c/Dev/learnings/terraform-learnings/derek/terraform-docker/variables/noderedvol/"
+    # For Windows
+    #host_path = "/c/Dev/learnings/terraform-learnings/derek/terraform-docker/variables/noderedvol/"
+    # For Linux
+    host_path = "/home/kunadis/terraform-docker/variables/noderedvol/"
   }
 }
 
