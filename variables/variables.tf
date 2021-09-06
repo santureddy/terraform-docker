@@ -20,8 +20,8 @@ variable "ext_port" {
   }
 
    validation {
-    condition     = max(var.ext_port["prod"]...) < 1980 && min(var.ext_port["prod"]...) > 1880
-    error_message = "The value of ext_port should be in range 0-65525."
+    condition     = max(var.ext_port["prod"]...) < 1980 && min(var.ext_port["prod"]...) >= 1880
+    error_message = "The value of int_port should be in range 0-65525."
   }
 
 }
