@@ -25,14 +25,14 @@ resource "docker_container" "nodered_container" {
   image = module.image.image_out
   ports {
     internal = 1880
-    external = var.ext_port
+    external = var.ext_port[terraform.workspace][count.index]
   }
   volumes {
     container_path = "/data"
     # For Windows
     #host_path = "/c/Dev/learnings/terraform-learnings/derek/terraform-docker/variables/noderedvol/"
     # For Linux
-    host_path = "/home/kunadis/terraform-docker/variables/noderedvol/"
+    host_path = "${path.cwd}/noderedvol"
   }
 }
 
