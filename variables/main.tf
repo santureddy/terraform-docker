@@ -12,7 +12,7 @@ module "image" {
 }
 
 resource "random_string" "random" {
-  count   = var.container_count
+  count   = local.container_count
   length  = 4
   special = false
   upper   = false
@@ -20,7 +20,7 @@ resource "random_string" "random" {
 
 resource "docker_container" "nodered_container" {
   depends_on = [null_resource.dockervol]
-  count = var.container_count
+  count = local.container_count
   name  = join("-", ["nodered", random_string.random[count.index].result])
   image = module.image.image_out
   ports {
