@@ -1,0 +1,27 @@
+name: 'Database Workflow'
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+env:
+  DB_DATABASE: test_db
+  DB_USER: root
+  DB_PASSWORD: root
+
+jobs:
+  runDB:
+    name: 'Test My SQL'
+    runs-on: ubuntu-latest
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Set up MySQL
+        run: |
+             sudo /etc/init.d/mysql start
+             mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
